@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"
+    />
+
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/milligram.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <title>Entrocell - Dashboard Page</title>
+</head>
+<body>
+
+    
+
+    <div class="container">
+
+        <!-- Navigation -->
+        <div class="nav">
+            <div>Anasayfa</div>
+            <div><img id="navLogo"  src="assets/img/vectorized-white.png" alt=""></div>
+            <div class="navInfoBox">
+                <div id=="navName">Tolga UÇAR</div>
+                <span><i id="navLogoutIcon" class="iconoir-log-out"></i></span>
+            </div>
+        </div>
+
+        <section class="main">
+            <div id="confetti-container"></div>
+            <div class="container">
+
+                <div class="prizeArea ">
+                    <div class="prizeBox ">
+                        <i class="iconoir-gift"></i>
+                        <div>
+                            <h3 class="prizeName">Hediye 1</h3>
+                            <button onclick="clickClaim()">ÖDÜLÜ AL</button>
+                        </div>
+                    </div>
+                    <div class="prizeBox ">
+                        <i class="iconoir-gift"></i>
+                        <div>
+                            <h3 class="prizeName">Hediye 2</h3>
+                            <button onclick="clickClaim()">ÖDÜLÜ AL</button>
+                        </div>
+                    </div>
+                    <div class="prizeBox ">
+                        <i class="iconoir-gift"></i>
+                        <div>
+                            <h3 class="prizeName">Hediye 3</h3>
+                            <button onclick="clickClaim()">ÖDÜLÜ AL</button>
+                        </div>
+                    </div>
+                    
+                </div>
+
+               
+                
+
+            </div>
+
+        </section>
+
+    </div>
+</body>
+
+<script>
+    function clickClaim(){
+
+        let gifts=["5 GB İnternet", "200 sms", "50 dakika"];
+
+        showConfetti();
+
+        let randomGift = gifts[Math.floor(Math.random() * 3)];
+
+
+        Swal.fire({
+            title: "Tebrikler!",
+            text: randomGift + " kazandınız",
+            icon: "success"
+        }).then(
+            function (){
+                window.location.href = "dashboard.html";
+
+            }
+        );
+
+
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.1.0/dist/canvas-confetti.js"></script>
+<script src="assets/js/confetti.js"></script>
+</html>
